@@ -17,6 +17,8 @@ Route::get('/', [Controllers\AlbumController::class, 'getIndex']);
 Route::get('/albums', [Controllers\AlbumController::class, 'getIndex'])->name('albums');
 Route::get('album/{album}', [Controllers\AlbumController::class, 'getOne']);
 Route::get('product/{product}', [Controllers\AlbumController::class, 'getProduct']);
+Route::get('product/{product}/likes', [Controllers\AlbumController::class, 'likes']);
+Route::get('product/{product}/like_del', [Controllers\AlbumController::class, 'like_del']);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

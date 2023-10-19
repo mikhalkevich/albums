@@ -15,4 +15,10 @@ class Product extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+    public function likes(){
+        return $this->hasMany(Likes::class, 'product_id');
+    }
+    public function totals(){
+        return $this->likes->count();
+    }
 }
