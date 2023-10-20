@@ -33,6 +33,8 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
+                <a href="{{asset('register')}}" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register</a>
+                &nbsp;
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
@@ -46,7 +48,7 @@
         </form>
         <div class="text-center">&nbsp;</div>
         <div class="w-full text-center">
-            <a href="{{asset('register')}}" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register</a>
+
         </div>
     </x-authentication-card>
 
