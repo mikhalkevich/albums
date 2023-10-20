@@ -17,8 +17,9 @@
                     </div>
                     <div>
                         @if(auth()->guest())
-                            <div>Чтобы добавить комментарий, необходимо <a href="{{asset('login')}}"
-                                                                           class="text-amber-900 underline hover:no-underline font-bold">авторизоваться</a>
+                            <div>Чтобы добавить комментарий, необходима авторизация
+                                <a href="{{asset('login')}}" class="text-amber-900 underline hover:no-underline font-bold">login</a>
+                                <a href="{{asset('register')}}" class="text-amber-900 underline hover:no-underline font-bold">register</a>
                             </div>
                         @else
                             <form action="{{asset('/product/'.$product->id.'/comment_add')}}" method="post" class="pb-5">

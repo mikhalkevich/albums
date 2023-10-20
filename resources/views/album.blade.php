@@ -10,8 +10,9 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                         <div class="w-full p-1">
                             @if(auth()->guest())
-                                <div>Чтобы добавить изображение, необходимо <a href="{{asset('login')}}"
-                                                                               class="text-amber-900 underline hover:no-underline font-bold">авторизоваться</a>
+                                <div>Чтобы добавить изображение, необходима авторизация
+                                    <a href="{{asset('login')}}" class="text-amber-900 underline hover:no-underline font-bold">Login</a>
+                                    <a href="{{asset('register')}}" class="text-amber-900 underline hover:no-underline font-bold">Register</a>
                                 </div>
                             @else
                                 <div

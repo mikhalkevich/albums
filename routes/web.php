@@ -29,6 +29,9 @@ Route::middleware([
     })->name('dashboard');
     Route::post('album', [Controllers\AlbumController::class, 'postIndex']);
     Route::post('/album/{album}/product_add', [Controllers\AlbumController::class, 'postProduct']);
+    Route::get('/album/{album}/edit', [Controllers\AlbumController::class, 'getEdit']);
+    Route::post('/album/{album}/edit', [Controllers\AlbumController::class, 'postEdit']);
+    Route::get('/album/{album}/delete', [Controllers\AlbumController::class, 'getDelete']);
     Route::post('/product/{product}/comment_add', [Controllers\AlbumController::class, 'postComment']);
     Route::post('/product/{product}/likes_add', [Controllers\AlbumController::class, 'postLike']);
 });

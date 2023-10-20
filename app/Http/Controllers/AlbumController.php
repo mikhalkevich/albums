@@ -27,7 +27,8 @@ class AlbumController extends Controller
     {
         $album = Album::firstOrCreate([
             'name' => $request->name,
-            'body' => $request->body
+            'body' => $request->body,
+            'user_id' => optional(Auth::user())->id
         ]);
         return redirect()->back();
     }
@@ -86,5 +87,16 @@ class AlbumController extends Controller
     {
          Likes::where('product_id', $product->id)->where('ip', $request->ip())->delete();
          return redirect()->back();
+    }
+    public function getDelete(Album $album){
+        $album->delete();
+        return redirect()->back();
+    }
+    public function getEdit(Album $album){
+        return view('auth.album_edit', compact('album'));
+    }
+    public function postEdit(Request $request, Album $album){
+        $album->update($request->all());
+        return redirect()->back();
     }
 }
