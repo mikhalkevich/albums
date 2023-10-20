@@ -5,5 +5,5 @@ Albums with pictures on laravel
 - cd albums
 - composer install
 - npm i
-  Создать  базу и подключиться к ней в файле .env
+-  Создать  базу и подключиться к ней в файле .env
 - php artisan migrate
