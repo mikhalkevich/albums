@@ -9,6 +9,7 @@ use App\Models\Likes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Actions\Imag;
+use Illuminate\Support\Facades\Storage;
 
 class AlbumController extends Controller
 {
@@ -98,5 +99,11 @@ class AlbumController extends Controller
     public function postEdit(Request $request, Album $album){
         $album->update($request->all());
         return redirect()->back();
+    }
+    public function getProductDelete(Product $product){
+        Storage::delete('public/albums/'.$product->album_id.'/'.$product->picture);
+        Storage::delete('public/albums/'.$product->album_id.'/s_'.$product->picture);
+        $product->delete();
+        return redirect('album/'.$product->album_id);
     }
 }

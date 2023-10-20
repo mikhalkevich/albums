@@ -34,4 +34,5 @@ Route::middleware([
     Route::get('/album/{album}/delete', [Controllers\AlbumController::class, 'getDelete']);
     Route::post('/product/{product}/comment_add', [Controllers\AlbumController::class, 'postComment']);
     Route::post('/product/{product}/likes_add', [Controllers\AlbumController::class, 'postLike']);
+    Route::get('/product/{product}/delete', [Controllers\AlbumController::class, 'getProductDelete']);
 });
