@@ -11,8 +11,8 @@
                         <div class="w-full p-1">
                             @if(auth()->guest())
                                 <div>Чтобы добавить изображение, необходима авторизация
-                                    <a href="{{asset('login')}}" class="text-amber-900 underline hover:no-underline font-bold">Login</a>
-                                    <a href="{{asset('register')}}" class="text-amber-900 underline hover:no-underline font-bold">Register</a>
+                                    <a href="{{asset('login')}}" class="text-blue-900 underline hover:no-underline font-bold">Login</a>
+                                    <a href="{{asset('register')}}" class="text-blue-900 underline hover:no-underline font-bold">Register</a>
                                 </div>
                             @else
                                 <div
@@ -20,7 +20,7 @@
                                     @keydown.escape="showModal = false"
                                 >
                                     <!-- Trigger for Modal -->
-                                    <button type="button" @click="showModal = true" class="p-2 w-full block font-medium text-white text-center bg-amber-600 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Добавить</button>
+                                    <button type="button" @click="showModal = true" class="p-2 w-full block font-medium text-gray-900 text-center bg-blue-300 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-blue-200 rounded-lg dark:bg-blue-300 dark:hover:bg-blue-700 dark:focus:ring-blue-400">Добавить</button>
 
                                     <!-- Fon -->
                                     <div
@@ -46,7 +46,7 @@
                                                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="picture1" name="picture1" type="file" placeholder="picture">
                                                     </div>
                                                     <div class="flex items-center justify-between">
-                                                        <button class="bg-amber-700 hover:bg-amber-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                                        <button class="bg-blue-700 hover:bg-blue-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                                                             Добавить
                                                         </button>
                                                     </div>

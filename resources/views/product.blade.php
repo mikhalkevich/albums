@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <button
-                                        class="w-[200px] p-2  font-medium text-white text-center bg-amber-600 hover:bg-amber-800 rounded-lg"
+                                        class="w-[200px] p-2  font-medium text-white text-center bg-sky-600 hover:bg-sky-800 rounded-lg"
                                         type="submit"
                                     >
                                         Submit

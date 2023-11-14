@@ -16,7 +16,7 @@ class AlbumController extends Controller
     public function getIndex()
     {
         $albums = Album::orderBy('id', 'DESC')->limit(100)->get();
-        return view('welcome', compact('albums'));
+        return view('albums', compact('albums'));
     }
 
     public function getOne(Album $album)
@@ -105,5 +105,8 @@ class AlbumController extends Controller
         Storage::delete('public/albums/'.$product->album_id.'/s_'.$product->picture);
         $product->delete();
         return redirect('album/'.$product->album_id);
+    }
+    public function getAjaxAlbum(Album $album){
+        return view('api.album', compact('album'));
     }
 }

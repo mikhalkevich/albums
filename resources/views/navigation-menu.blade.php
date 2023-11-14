@@ -16,6 +16,11 @@
                         Альбомы
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ asset('/blog') }}" :active="request()->routeIs('news')">
+                        Блог
+                    </x-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -61,6 +66,10 @@
                                 <!-- Account Management -->
                                 <x-dropdown-link href="{{ route('dashboard') }}">
                                     Мои альбомы
+                                </x-dropdown-link>
+
+                                <x-dropdown-link href="{{ route('my_news') }}">
+                                    Мой блог
                                 </x-dropdown-link>
 
                                 <x-dropdown-link href="{{ route('profile.show') }}">

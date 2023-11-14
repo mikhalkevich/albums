@@ -29,7 +29,7 @@
                             ></textarea>
                         </div>
                         <button type="submit"
-                                class="p-2 ml-1  font-medium text-white text-center bg-amber-600 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                class="p-2 ml-1  font-medium text-white text-center bg-sky-600 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Save
                         </button>
                     </form>
@@ -46,7 +46,7 @@
                     @foreach(\App\Models\Album::where('user_id', optional(auth()->user())->id)->orderBy('id','DESC')->get() as $album)
                         <tr>
                             <td class="">
-                                <a href="{{asset('album/'.$album->id)}}" class="text-amber-900 hover:underline">
+                                <a href="{{asset('album/'.$album->id)}}" class="text-sky-900 hover:underline">
                                 {{$album->name}} ({{$album->products->count()}})
                                 </a>
                             </td>
@@ -68,9 +68,9 @@
                                         </div>
                                     </div>
                                 @else
-                                <a href="{{asset('album/'.$album->id.'/delete')}}" class="text-amber-900 hover:underline m-2">удалить</a>
+                                <a href="{{asset('album/'.$album->id.'/delete')}}" class="text-sky-900 hover:underline m-2">удалить</a>
                                 @endif
-                                    <a href="{{asset('album/'.$album->id.'/edit')}}" class="text-amber-900 hover:underline">редактировать</a>
+                                    <a href="{{asset('album/'.$album->id.'/edit')}}" class="text-sky-900 hover:underline">редактировать</a>
                             </td>
                         </tr>
                     @endforeach

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Livewire\FormNews;
+use App\Livewire\EditNews;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +15,8 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', [Controllers\AlbumController::class, 'getIndex']);
+Route::get('/', [Controllers\BaseController::class, 'getIndex']);
+Route::get('/blog', [Controllers\NewsController::class, 'getIndex'])->name('news');
 Route::get('/albums', [Controllers\AlbumController::class, 'getIndex'])->name('albums');
 Route::get('album/{album}', [Controllers\AlbumController::class, 'getOne']);
 Route::get('product/{product}', [Controllers\AlbumController::class, 'getProduct']);
@@ -35,4 +38,11 @@ Route::middleware([
     Route::post('/product/{product}/comment_add', [Controllers\AlbumController::class, 'postComment']);
     Route::post('/product/{product}/likes_add', [Controllers\AlbumController::class, 'postLike']);
     Route::get('/product/{product}/delete', [Controllers\AlbumController::class, 'getProductDelete']);
+    //Route::get('/my_news/', [Controllers\NewsController::class, 'myNews'])->name('my_news');
+    Route::get('/my_news/', FormNews::class)->name('my_news');
+    Route::get('/my_news/{article}/edit', EditNews::class);
+
+    Route::prefix('ajax')->group(function (){
+        Route::get('album/{album}', [Controllers\AlbumController::class, 'getAjaxAlbum']);
+    });
 });
