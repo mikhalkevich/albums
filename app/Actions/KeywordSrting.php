@@ -31,6 +31,5 @@ class KeywordSrting
             $res_k = optional(optional($article->picture)->album)->name . ', ';
         }
             return $res_k;
-
     }
 }
