@@ -16,6 +16,7 @@ use App\Livewire\EditNews;
 */
 
 Route::get('/', [Controllers\BaseController::class, 'getIndex']);
+Route::get('/album', [Controllers\BaseController::class, 'getIndex']);
 Route::get('/blog', [Controllers\NewsController::class, 'getIndex'])->name('news');
 Route::get('article/{article}', [Controllers\NewsController::class, 'getOne']);
 Route::get('/albums', [Controllers\AlbumController::class, 'getIndex'])->name('albums');
