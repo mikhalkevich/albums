@@ -16,4 +16,10 @@ class Article extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function keywords(){
+        return $this->belongsToMany(Keyword::class, 'keyword_article');
+    }
+    public function body(){
+        return $this->hasOne(ArticleBody::class);
+    }
 }

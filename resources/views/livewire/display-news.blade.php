@@ -1,13 +1,13 @@
 <div>
     @foreach($articles as $article)
-        <article class="p-6 bg-white overflow-hidden shadow-xl sm:rounded-lg mb-6">
+        <article class="p-6 bg-white shadow-xl sm:rounded-lg mb-6">
             <div class="flex items-center justify-between mb-3 text-gray-500">
                 <div>
                     <a class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 hover:bg-blue-200 dark:hover:bg-blue-300 dark:text-blue-800 mb-2" href="/blog/tag/flowbite/">#Flowbite</a>
                 </div>
-                <span class="text-sm"> <time datetime="1677146503000">
+                <span class="text-sm">
                         <a href="#" class="text-amber-900 hover:underline">{{$article->user->name}}</a>
-                        {{$article->created_at->diffForHumans()}}</time>
+                        {{$article->created_at->diffForHumans()}}
 
                 </span>
             </div>
@@ -19,7 +19,7 @@
                 @endif
             <div class="mb-5 text-gray-500 dark:text-gray-400 pl-4">
                     <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:underline">
-                        <a href="#" class="text-amber-900 hover:underline">{{$article->name}}</a></h2>
+                        <a href="{{asset('article/'.$article->id)}}" class="text-amber-900 hover:underline">{{$article->name}}</a></h2>
                 {{$article->description}}
             </div>
             </div>

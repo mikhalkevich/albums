@@ -1,11 +1,11 @@
 <div>
     <h2 class="font-bold">
-        {{$album->name}} ({{$album->products->count()}})
+        {{$album->name}}
     </h2>
-    <div class="flex">
+    <div class="grid grid-flow-col auto-cols-max">
     @foreach($album->products()->orderBy('id', 'DESC')->get() as $product)
-        <label for="product_id">
-            <input type="radio" wire:model="product_id" value="{{$product->id}}">
+        <label for="product_id_{{$product->id}}" class="p-2">
+            <input type="radio" id="product_id_{{$product->id}}" wire:model="product_id" value="{{$product->id}}">
                 <img class="object-cover rounded-tl-lg rounded-tr-lg" width="150px"
                      src="{{asset('storage/albums/'.$album->id.'/s_'.$product->picture)}}"/>
         </label>

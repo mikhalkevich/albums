@@ -28,15 +28,6 @@
                             wire:model="description"
                         ></textarea>
                     </div>
-                    <div class="flex flex-col space-y-10">
-                        <div wire:ignore>
-                        <textarea wire:model="message"
-                                  class="min-h-fit h-48"
-                                  name="message"
-                                  placeholder="Текст статьи"
-                                  id="message"></textarea>
-                        </div>
-                    </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="body">
                             Добавить изображение из альбома
@@ -84,21 +75,4 @@ const cat = $event.target.value;
         </div>
     </div>
 </div>
-@push('scripts')
-    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
-
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#message'))
-            .then(editor => {
-                editor.model.document.on('change:data', () => {
-                @this.set('message', editor.getData())
-                    ;
-                })
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-@endpush
 

@@ -107,6 +107,8 @@ class AlbumController extends Controller
         return redirect('album/'.$product->album_id);
     }
     public function getAjaxAlbum(Album $album){
-        return view('api.album', compact('album'));
+        if($album){
+            return view('api.album', compact('album'));
+        }
     }
 }

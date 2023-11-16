@@ -17,8 +17,10 @@ use App\Livewire\EditNews;
 
 Route::get('/', [Controllers\BaseController::class, 'getIndex']);
 Route::get('/blog', [Controllers\NewsController::class, 'getIndex'])->name('news');
+Route::get('article/{article}', [Controllers\NewsController::class, 'getOne']);
 Route::get('/albums', [Controllers\AlbumController::class, 'getIndex'])->name('albums');
 Route::get('album/{album}', [Controllers\AlbumController::class, 'getOne']);
+
 Route::get('product/{product}', [Controllers\AlbumController::class, 'getProduct']);
 Route::get('product/{product}/likes', [Controllers\AlbumController::class, 'likes']);
 Route::get('product/{product}/like_del', [Controllers\AlbumController::class, 'like_del']);
@@ -45,4 +47,6 @@ Route::middleware([
     Route::prefix('ajax')->group(function (){
         Route::get('album/{album}', [Controllers\AlbumController::class, 'getAjaxAlbum']);
     });
+
+    Route::post('editor/{article_id}/image_upload', [Controllers\EditorController::class, 'upload'])->name('upload');
 });
